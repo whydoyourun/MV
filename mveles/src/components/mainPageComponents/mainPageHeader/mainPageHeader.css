@@ -1,0 +1,71 @@
+* {
+  font-family: Lexend;
+}
+
+.custom-header {
+  position: relative; /* Установка относительного позиционирования для контейнера */
+  background-color: black; /* Черный фон */
+  color: white;
+  text-align: center;
+  height: 500px;
+  opacity: 0.99;
+}
+
+.custom-header::before {
+  content: "";
+  position: absolute; /* Абсолютное позиционирование для псевдоэлемента */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../../static/sized_chelik.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6; /* Прозрачность фонового изображения */
+  z-index: -1; /* Поместить за содержимым */
+}
+
+.header-title {
+  font-size: 36px;
+  vertical-align: top;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header-subtitle {
+  font-size: 50px;
+  margin: 20px 0;
+}
+
+.info-container {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.info-card {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #c8a36000; /* Полупрозрачный фон карточки */
+  border-color: #c8a360;
+  border-width: 2.5px;
+  color: white;
+  width: 700px; /* Ширина карточки */
+}
+
+.M-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.M-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.info-text {
+  font-size: 24px;
+}
