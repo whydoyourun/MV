@@ -1,5 +1,11 @@
 import React from "react";
 import { Card } from "antd";
+import {
+  TruckOutlined,
+  DollarOutlined,
+  SafetyCertificateOutlined,
+  TeamOutlined,
+} from "@ant-design/icons";
 import "./MainCards.css";
 
 interface CardItem {
@@ -11,22 +17,22 @@ interface CardItem {
 const MainCards: React.FC = () => {
   const cardItems: CardItem[] = [
     {
-      icon: <i className="fas fa-cog"></i>,
+      icon: <TruckOutlined className="main-card-icon" />,
       title: "Premium quality machines",
       description: "only most efficient and productive machines",
     },
     {
-      icon: <i className="fas fa-shield-alt"></i>,
+      icon: <SafetyCertificateOutlined className="main-card-icon" />,
       title: "Reliability guarantee",
       description: "Qualitatively result on time",
     },
     {
-      icon: <i className="fas fa-graduation-cap"></i>,
+      icon: <TeamOutlined className="main-card-icon" />,
       title: "Masters of our job",
       description: "Experienced and Qualified team",
     },
     {
-      icon: <i className="fas fa-dollar-sign"></i>,
+      icon: <DollarOutlined className="main-card-icon" />,
       title: "Profitable prices",
       description: "Best price-quality ratio on the market",
     },

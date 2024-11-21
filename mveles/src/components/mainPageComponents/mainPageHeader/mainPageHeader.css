@@ -21,7 +21,7 @@
   background-image: url("../../../static/sized_chelik.png");
   background-size: cover;
   background-position: center;
-  opacity: 0.6; /* Прозрачность фонового изображения */
+  opacity: 0.38; /* Прозрачность фонового изображения */
   z-index: -1; /* Поместить за содержимым */
 }
 

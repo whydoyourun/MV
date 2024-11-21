@@ -1,50 +1,64 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap");
 
 .main-cards {
-  background-color: black;
+  background: linear-gradient(to bottom, #0c0b0d, #000000);
 }
+
 .main-cards-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
-  padding: 10px 20px;
-  font-size: 24px;
+  padding: 10px 0px;
+  font-size: 30px;
   font-weight: bold;
-  text-align: left;
+  margin-bottom: 10px;
 }
 
 .main-cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
-  padding: 0px 100px 50px 100px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 2%;
+  padding-bottom: 50px;
 }
 
 .main-card {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 15px hsla(39, 100%, 65%, 0.4);
-  padding: 20px;
+
+  max-width: 350px;
+  max-height: 220px;
 }
 
 .main-card-content {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
 .main-card-icon {
-  font-size: 32px;
-  color: #007bff;
-  margin-right: 16px;
+  font-size: 50px;
+  color: black;
+  align-self: center;
+}
+
+.main-card-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .main-card-text h3 {
-  font-size: 18px;
+  display: flex;
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 8px;
   font-style: Lexend;
+  align-self: center;
 }
 
 .main-card-text p {
-  font-size: 14px;
+  display: flex;
+  font-size: 16px;
   color: #6c757d;
   font-style: Lexend;
+  text-align: center;
 }

@@ -4,32 +4,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px; /* Установите желаемую высоту карусели */
-  background-color: black;
+  height: 500px;
+  background-color: #0c0b0d;
 }
 
 .carousel-container {
-  width: 100%;
-  max-width: 1400px; /* Установите максимальную ширину карусели */
+  width: 85%;
+  padding-top: 50px;
 }
 
 .carousel-item {
   display: flex;
+  flex-direction: r;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 400px;
+  padding: 0 10%;
 }
 
 .carousel-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-right: 20px;
+  max-width: 60%;
 }
 
 .carousel-topic {
   font-size: 50px;
-  font-weight: bold;
+  font-weight: 700;
   color: white;
   vertical-align: top;
   font-style: Lexend;
@@ -43,17 +45,14 @@
 }
 
 .carousel-button {
-  align-self: flex-start;
-  margin-top: 100px;
-
   font-style: Lexend;
+  border-radius: 3px;
+  background-color: #c69235;
 }
 
 .carousel-image {
-  max-width: 50%;
-  max-height: 100%;
+  max-width: 60%;
   object-fit: contain;
   float: inline-end;
-
-  margin-top: -150px;
+  margin-top: -235px;
 }

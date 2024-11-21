@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap");
+
+.aboutUs-container {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.text {
+  display: flex;
+  max-width: 600px;
+  color: white;
+  margin-right: 20px;
+  font-size: 20px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutUs-img {
+  max-width: 600px;
+  height: auto;
+}
+
+.header-about-company {
+  display: flex;
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: white;
+  align-self: center;
+}

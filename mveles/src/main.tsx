@@ -1,4 +1,3 @@
-import React from "react"; // Добавьте этот импорт
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
