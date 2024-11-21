@@ -2,7 +2,7 @@ import React from "react";
 import aboutUs from "../../../static/aboutUs.png";
 
 import "./aboutUs.css";
-
+//zxc
 const AboutUs: React.FC = () => {
   return (
     <div className="aboutUs-container">
