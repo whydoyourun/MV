@@ -1,0 +1,27 @@
+.carousel-wrapper {
+  padding: 20px;
+  background-color: #000;
+}
+
+.custom-carousel .ant-carousel .slick-dots li button {
+  background-color: #fff;
+}
+
+.custom-carousel .ant-carousel .slick-dots .slick-active button {
+  background-color: #1890ff;
+}
+
+.transport-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transport-card .ant-card-cover img {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.transport-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}

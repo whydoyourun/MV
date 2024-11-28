@@ -1,0 +1,16 @@
+.details-modal .ant-modal-content {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.details-modal .ant-modal-header {
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #d9d9d9;
+  font-weight: bold;
+}
+
+.details-modal img {
+  max-height: 350px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}

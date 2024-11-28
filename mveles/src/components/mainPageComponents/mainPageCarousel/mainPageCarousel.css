@@ -56,3 +56,16 @@
   float: inline-end;
   margin-top: -235px;
 }
+
+.carousel-button {
+  background-color: #c48d2d; /* Исходный цвет кнопки */
+  color: #fff;
+  transition: all 0.3s ease; /* Плавный переход */
+}
+
+.carousel-button:hover {
+  background-color: #efa92e !important; /* Новый цвет фона при наведении */
+  color: #000; /* Новый цвет текста при наведении */
+  border-color: #efa92e; /* Новый цвет границы */
+  transform: scale(1.05); /* Увеличение кнопки при наведении */
+}

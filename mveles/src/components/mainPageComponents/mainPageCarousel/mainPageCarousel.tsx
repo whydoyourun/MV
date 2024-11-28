@@ -1,32 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carousel, Button, Flex } from "antd";
 import "./MainPageCarousel.css";
 
 import traktor1 from "../../../static/traktor1.png";
+import DetailsModal from "../DetailModal/DetailModal";
 
 const MainPageCarousel: React.FC = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<{
+    text: string;
+    subtext: string;
+    img: string;
+  } | null>(null);
+
   const carouselItems = [
     {
       img: traktor1,
       text: "Transport rent1",
-      subtext: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      subtext: "Lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
     {
       img: traktor1,
       text: "Transport rent2",
-      subtext: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      subtext: "Lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
     {
       img: traktor1,
       text: "Transport rent3",
-      subtext: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      subtext: "Lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
     {
       img: traktor1,
       text: "Transport rent4",
-      subtext: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      subtext: "Lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
   ];
+
+  const handleOpenModal = (item: (typeof carouselItems)[0]) => {
+    setSelectedItem(item);
+    setIsModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+    setSelectedItem(null);
+  };
 
   return (
     <div className="carousel-wrapper">
@@ -43,6 +61,7 @@ const MainPageCarousel: React.FC = () => {
                     type="primary"
                     size="large"
                     className="carousel-button"
+                    onClick={() => handleOpenModal(item)}
                   >
                     More details
                   </Button>
@@ -57,6 +76,12 @@ const MainPageCarousel: React.FC = () => {
           </Carousel>
         </Flex>
       </div>
+
+      <DetailsModal
+        visible={isModalVisible}
+        onClose={handleCloseModal}
+        data={selectedItem}
+      />
     </div>
   );
 };
