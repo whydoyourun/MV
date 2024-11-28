@@ -6,42 +6,45 @@ import {
   SafetyCertificateOutlined,
   TeamOutlined,
 } from "@ant-design/icons";
+import { useTranslation } from "react-i18next"; // Импортируем useTranslation для перевода
 import "./MainCards.css";
 
 interface CardItem {
   icon: React.ReactNode;
-  title: string;
-  description: string;
+  titleKey: string; // Ключ для перевода заголовка
+  descriptionKey: string; // Ключ для перевода описания
 }
 
 const MainCards: React.FC = () => {
+  const { t } = useTranslation(); // Инициализируем функцию t для получения переведенных строк
+
   const cardItems: CardItem[] = [
     {
       icon: <TruckOutlined className="main-card-icon" />,
-      title: "Premium quality machines",
-      description: "only most efficient and productive machines",
+      titleKey: "premium_quality_title",
+      descriptionKey: "premium_quality_desc",
     },
     {
       icon: <SafetyCertificateOutlined className="main-card-icon" />,
-      title: "Reliability guarantee",
-      description: "Qualitatively result on time",
+      titleKey: "reliability_title",
+      descriptionKey: "reliability_desc",
     },
     {
       icon: <TeamOutlined className="main-card-icon" />,
-      title: "Masters of our job",
-      description: "Experienced and Qualified team",
+      titleKey: "masters_title",
+      descriptionKey: "masters_desc",
     },
     {
       icon: <DollarOutlined className="main-card-icon" />,
-      title: "Profitable prices",
-      description: "Best price-quality ratio on the market",
+      titleKey: "profitable_prices_title",
+      descriptionKey: "profitable_prices_desc",
     },
   ];
 
   return (
     <div className="main-cards">
       <div className="main-cards-header">
-        <h2>why us ?</h2>
+        <h2>{t("cards_header")}</h2>
       </div>
       <div className="main-cards-container">
         {cardItems.map((item, index) => (
@@ -49,8 +52,8 @@ const MainCards: React.FC = () => {
             <div className="main-card-content">
               <div className="main-card-icon">{item.icon}</div>
               <div className="main-card-text">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <h3>{t(item.titleKey)}</h3>
+                <p>{t(item.descriptionKey)}</p>
               </div>
             </div>
           </Card>

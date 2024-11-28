@@ -1,7 +1,3 @@
-* {
-  font-family: Lexend;
-}
-
 .custom-header {
   position: relative; /* Установка относительного позиционирования для контейнера */
   background-color: black; /* Черный фон */

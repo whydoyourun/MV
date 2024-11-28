@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Layout, notification } from "antd";
+import { useTranslation } from "react-i18next"; // Импортируем useTranslation для перевода
 import "./MainPageTopbar.css";
 
 const handlePhoneNumberClick = () => {
@@ -8,7 +9,7 @@ const handlePhoneNumberClick = () => {
     .writeText(phoneNumber)
     .then(() => {
       notification.success({
-        message: "Номер успешно скопирован!",
+        message: "номер успешно скопирован",
         placement: "topRight",
         duration: 2.5,
       });
@@ -21,24 +22,29 @@ const handlePhoneNumberClick = () => {
 const { Header } = Layout;
 
 const MainPageHeader: React.FC = () => {
-  const [language, setLanguage] = useState<string>("RU");
+  const { i18n } = useTranslation(); // Получаем доступ к объекту i18n
 
+  // Функция для смены языка
   const handleLanguageChange = (lang: string) => {
-    setLanguage(lang);
+    i18n.changeLanguage(lang.toLowerCase()); // Смена языка через i18n
   };
 
   return (
     <Header className="header">
       <div className="language">
         <span
-          className={`language-option ${language === "EN" ? "active" : ""}`}
+          className={`language-option ${
+            i18n.language === "en" ? "active" : ""
+          }`}
           onClick={() => handleLanguageChange("EN")}
         >
           ENG
         </span>
         /
         <span
-          className={`language-option ${language === "RU" ? "active" : ""}`}
+          className={`language-option ${
+            i18n.language === "ru" ? "active" : ""
+          }`}
           onClick={() => handleLanguageChange("RU")}
         >
           RU

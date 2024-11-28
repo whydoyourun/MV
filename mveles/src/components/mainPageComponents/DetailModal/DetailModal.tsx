@@ -44,7 +44,7 @@ const DetailModal: React.FC<DetailsModalProps> = ({
         <Descriptions bordered column={1}>
           <Descriptions.Item label="Description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            efficitur.
+            efficitur зхкурсед.
           </Descriptions.Item>
           <Descriptions.Item label="Price">From $100/day</Descriptions.Item>
           <Descriptions.Item label="Availability">

@@ -1,43 +1,62 @@
 import React, { useState } from "react";
 import { Carousel, Button, Flex } from "antd";
+import { useTranslation } from "react-i18next"; // Импортируем useTranslation для перевода
 import "./MainPageCarousel.css";
 
 import traktor1 from "../../../static/traktor1.png";
 import DetailsModal from "../DetailModal/DetailModal";
+import "../../../slovari/i18n";
+
+type CarouselItem = {
+  img: string;
+  textKey: string; // Ключ для перевода текста
+  subtextKey: string; // Ключ для перевода подзаголовка
+};
+
+type DetailsModalData = {
+  text: string;
+  subtext: string;
+  img: string;
+};
 
 const MainPageCarousel: React.FC = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<{
-    text: string;
-    subtext: string;
-    img: string;
-  } | null>(null);
+  const { t } = useTranslation(); // Инициализируем функцию t для перевода
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const [selectedItem, setSelectedItem] = useState<DetailsModalData | null>(
+    null
+  );
 
-  const carouselItems = [
+  // Массив с элементами карусели, каждый элемент имеет ключи для перевода
+  const carouselItems: CarouselItem[] = [
     {
       img: traktor1,
-      text: "Transport rent1",
-      subtext: "Lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      textKey: "transport_rent_1",
+      subtextKey: "lorem_text",
     },
     {
       img: traktor1,
-      text: "Transport rent2",
-      subtext: "Lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      textKey: "transport_rent_2",
+      subtextKey: "lorem_text",
     },
     {
       img: traktor1,
-      text: "Transport rent3",
-      subtext: "Lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      textKey: "transport_rent_3",
+      subtextKey: "lorem_text",
     },
     {
       img: traktor1,
-      text: "Transport rent4",
-      subtext: "Lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      textKey: "transport_rent_4",
+      subtextKey: "lorem_text",
     },
   ];
 
-  const handleOpenModal = (item: (typeof carouselItems)[0]) => {
-    setSelectedItem(item);
+  const handleOpenModal = (item: CarouselItem) => {
+    const modalData: DetailsModalData = {
+      text: t(item.textKey),
+      subtext: t(item.subtextKey),
+      img: item.img,
+    };
+    setSelectedItem(modalData);
     setIsModalVisible(true);
   };
 
@@ -54,8 +73,8 @@ const MainPageCarousel: React.FC = () => {
             {carouselItems.map((item, index) => (
               <div className="carousel-item" key={index}>
                 <div className="carousel-content">
-                  <div className="carousel-topic">{item.text}</div>
-                  <div className="carousel-subtext">{item.subtext}</div>
+                  <div className="carousel-topic">{t(item.textKey)}</div>
+                  <div className="carousel-subtext">{t(item.subtextKey)}</div>
                   <Button
                     color="primary"
                     type="primary"
@@ -63,7 +82,7 @@ const MainPageCarousel: React.FC = () => {
                     className="carousel-button"
                     onClick={() => handleOpenModal(item)}
                   >
-                    More details
+                    {t("more_details")} {/* Перевод текста кнопки */}
                   </Button>
                 </div>
                 <img
