@@ -1,5 +1,5 @@
 .footer {
-  height: 100px;
+  height: 50px;
   background-color: #ebb95a;
 }
 
@@ -7,8 +7,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
   background-color: #ebb95a;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .center-text {
@@ -17,4 +18,8 @@
 
 .right-text {
   text-align: right;
+}
+
+.transparent-layout {
+  background: transparent !important; /* Обеспечиваем прозрачность */
 }

@@ -1,0 +1,24 @@
+.product-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  background-color: black;
+}
+
+.product-cards-container .ant-card {
+  width: 100%;
+  max-width: 600px; /* Ограничиваем максимальную ширину карточки */
+}
+
+.product-cards-container .ant-card {
+  transition: transform 0.35s ease; /* Анимация работает в обе стороны */
+}
+
+.product-cards-container .ant-card:hover {
+  transform: scale(1.05); /* Увеличение при наведении */
+}
+
+.bottom-carousel-price {
+  font-size: 120 !important;
+}

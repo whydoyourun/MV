@@ -2,7 +2,7 @@ import React from "react";
 import MainPageCarousel from "../mainPageCarousel/mainPageCarousel";
 import MainCards from "../mainCards/mainCards";
 import AboutUs from "../aboutUs/aboutUs";
-import BottomTransportCarousel from "../BottomTransportCarousel/BottomTransportCarousel";
+import BottomCarouselCards from "../BottomCarouselCards/BottomCarouselCards";
 
 import "./mainPageMain";
 
@@ -11,8 +11,8 @@ const MainPageMain: React.FC = () => {
     <div className="main-container">
       <MainPageCarousel />
       <MainCards />
-      <BottomTransportCarousel />
       <AboutUs />
+      <BottomCarouselCards />
     </div>
   );
 };

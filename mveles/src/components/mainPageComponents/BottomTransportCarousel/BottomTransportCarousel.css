@@ -1,27 +1,51 @@
-.carousel-wrapper {
-  padding: 20px;
-  background-color: #000;
+.tractor-carousel {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Центрируем слайдер */
 }
 
-.custom-carousel .ant-carousel .slick-dots li button {
-  background-color: #fff;
+.tractor-carousel .ant-carousel .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.custom-carousel .ant-carousel .slick-dots .slick-active button {
-  background-color: #1890ff;
+.tractor-carousel .ant-card {
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для карточек */
 }
 
-.transport-card {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.tractor-carousel .ant-card:hover {
+  transform: scale(1.05); /* Увеличение карточки при наведении */
 }
 
-.transport-card .ant-card-cover img {
-  border-bottom: 1px solid #f0f0f0;
+.tractor-carousel .ant-card img {
+  border-radius: 8px 8px 0 0; /* Закругляем верхние углы изображения */
 }
 
-.transport-card:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease-in-out;
+.tractor-carousel .ant-card-body {
+  text-align: center; /* Центрируем текст внутри карточек */
+  padding: 16px; /* Отступы для текста */
+}
+
+.tractor-carousel .ant-card-body p {
+  font-size: 14px; /* Уменьшаем размер текста описания */
+  color: #555; /* Нейтральный цвет текста */
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .tractor-carousel .ant-card {
+    margin-bottom: 16px; /* Увеличиваем отступы между карточками на мобильных устройствах */
+  }
+}
+
+@media (max-width: 576px) {
+  .tractor-carousel .ant-card-body {
+    padding: 12px; /* Уменьшаем отступы внутри карточек на маленьких экранах */
+  }
+
+  .tractor-carousel .ant-card-body p {
+    font-size: 12px; /* Еще больше уменьшаем размер текста для маленьких экранов */
+  }
 }
