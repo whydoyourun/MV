@@ -21,7 +21,7 @@ const handlePhoneNumberClick = () => {
 
 const { Header } = Layout;
 
-const MainPageHeader: React.FC = () => {
+const MainPageTopbar: React.FC = () => {
   const { i18n } = useTranslation(); // Получаем доступ к объекту i18n
 
   // Функция для смены языка
@@ -62,4 +62,4 @@ const MainPageHeader: React.FC = () => {
   );
 };
 
-export default MainPageHeader;
+export default MainPageTopbar;

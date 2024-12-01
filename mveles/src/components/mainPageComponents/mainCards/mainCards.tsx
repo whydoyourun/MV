@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "antd";
 import {
   TruckOutlined,
@@ -6,17 +6,17 @@ import {
   SafetyCertificateOutlined,
   TeamOutlined,
 } from "@ant-design/icons";
-import { useTranslation } from "react-i18next"; // Импортируем useTranslation для перевода
+import { useTranslation } from "react-i18next";
 import "./MainCards.css";
 
 interface CardItem {
   icon: React.ReactNode;
-  titleKey: string; // Ключ для перевода заголовка
-  descriptionKey: string; // Ключ для перевода описания
+  titleKey: string;
+  descriptionKey: string;
 }
 
 const MainCards: React.FC = () => {
-  const { t } = useTranslation(); // Инициализируем функцию t для получения переведенных строк
+  const { t } = useTranslation();
 
   const cardItems: CardItem[] = [
     {
@@ -41,6 +41,37 @@ const MainCards: React.FC = () => {
     },
   ];
 
+  // Держим состояние наклона отдельно для каждой карточки
+  const [tilts, setTilts] = useState<{ x: number; y: number }[]>(
+    new Array(cardItems.length).fill({ x: 0, y: 0 })
+  );
+
+  const handleMouseMove = (event: React.MouseEvent, index: number) => {
+    const { clientX, clientY } = event;
+    const { currentTarget } = event;
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+
+    const centerX = left + width / 2;
+    const centerY = top + height / 2;
+
+    const x = ((clientX - centerX) / (width / 2)) * 18; // Наклон по оси X
+    const y = ((clientY - centerY) / (height / 2)) * -12; // Наклон по оси Y
+
+    setTilts((prevTilts) => {
+      const newTilts = [...prevTilts];
+      newTilts[index] = { x, y };
+      return newTilts;
+    });
+  };
+
+  const handleMouseLeave = (index: number) => {
+    setTilts((prevTilts) => {
+      const newTilts = [...prevTilts];
+      newTilts[index] = { x: 0, y: 0 };
+      return newTilts;
+    });
+  };
+
   return (
     <div className="main-cards">
       <div className="main-cards-header">
@@ -48,7 +79,16 @@ const MainCards: React.FC = () => {
       </div>
       <div className="main-cards-container">
         {cardItems.map((item, index) => (
-          <Card key={index} className="main-card">
+          <Card
+            key={index}
+            className="main-card"
+            onMouseMove={(event) => handleMouseMove(event, index)}
+            onMouseLeave={() => handleMouseLeave(index)}
+            style={{
+              transform: `rotateY(${tilts[index].x}deg) rotateX(${tilts[index].y}deg)`,
+              transition: "transform 0.1s ease",
+            }}
+          >
             <div className="main-card-content">
               <div className="main-card-icon">{item.icon}</div>
               <div className="main-card-text">

@@ -37,7 +37,8 @@ const resources = {
       transport_rent_2: "Транспорт аренда 2",
       transport_rent_3: "Транспорт аренда 3",
       transport_rent_4: "Транспорт аренда 4",
-      lorem_text: "Равным образом реализация намеченных плановых заданий.",
+      lorem_text:
+        "Равным образом реализация намеченных плановых заданий в агросфере.",
       header_title: "MarkVeles",
       transport_rent: "Аренда транспорта",
       rental_description:
