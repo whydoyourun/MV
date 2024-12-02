@@ -6,19 +6,20 @@
   background-color: black;
 }
 
-.product-cards-container .ant-card {
-  width: 100%;
-  max-width: 600px; /* Ограничиваем максимальную ширину карточки */
+.carousel-slide {
+  padding-bottom: 30px;
 }
 
-.product-cards-container .ant-card {
-  transition: transform 0.35s ease; /* Анимация работает в обе стороны */
+.no-select {
+  user-select: none; /* Отключает выделение текста */
+  -webkit-user-select: none; /* Для Safari */
+  -moz-user-select: none; /* Для Firefox */
+  -ms-user-select: none; /* Для Internet Explorer/Edge */
 }
 
-.product-cards-container .ant-card:hover {
-  transform: scale(1.05); /* Увеличение при наведении */
-}
-
-.bottom-carousel-price {
-  font-size: 120 !important;
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Обеспечивает центрирование по вертикали */
 }
